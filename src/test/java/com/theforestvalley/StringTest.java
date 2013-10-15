@@ -100,14 +100,22 @@ public class StringTest {
         Assert.assertEquals(STRING_LENGTH, b.length());
     }
 
-    private String join(String join, String[] a) {
-        StringBuilder builder = new StringBuilder();
+    private String join(String glue, String[] a) {
+        int string_length = 0;
+
+        for (String s: a) {
+            string_length += s.length();
+        }
+
+        string_length += glue.length() * (a.length - 1);
+
+        StringBuilder builder = new StringBuilder(string_length);
         boolean first = true;
         for (String s: a) {
             if (first) {
                 first = false;
             } else {
-                builder.append(join);
+                builder.append(glue);
             }
             builder.append(s);
         }
