@@ -63,7 +63,7 @@ public class DareTest {
         int[] a = {21, 2, 2004, 19, 12, 1976, 11, 11, 123, 456, 0, 8};
         final int[] b = {8, 0, 456, 123, 11, 11, 1976, 12, 19, 2004, 2, 21};
         // int[] c = new int[a.length];
-
+        // Даша пишет комментарий
 
         for (int i = a.length - 1; i >= a.length/2; i--){
             int c = a[a.length - 1 - i];
