@@ -80,8 +80,17 @@ public class DareTest {
         final int[] sample = {24, 18, 16, 12, 10, 4};
 
         int factor = 2;
+        for (int i = a.length - 1; i >= a.length/2; i--){
 
-        // ...
+            int c = a[a.length - 1 - i];
+            a[a.length - 1 - i] = a[i];
+            a[i] = c;
+        }
+
+        for (int i = 0; i < a.length; i++){
+            a[i] =a [i]*factor;
+        }
+
 
         Assert.assertArrayEquals(sample, a);
 
