@@ -76,12 +76,16 @@ public class DareTest {
 
     @Test
     public void multiplyRevert() {
-        int[] a = {2, 5, 6, 8, 9, 12};
-        final int[] sample = {24, 18, 16, 12, 10, 4};
+        int[] a = {2, 5, 6, 8, 9, 12, 1};
+        final int[] sample = {2, 24, 18, 16, 12, 10, 4};
 
         int factor = 2;
+        for (int i = a.length - 1; i >= a.length/2; i--){
 
-        // ...
+            int c = a[a.length - 1 - i] * factor;
+            a[a.length - 1 - i] = a[i] * factor;
+            a[i] = c;
+        }
 
         Assert.assertArrayEquals(sample, a);
 
